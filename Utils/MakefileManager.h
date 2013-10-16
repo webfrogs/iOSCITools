@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MakefileConfig.h"
 
 @interface MakefileManager : NSObject
 
 + (void)addMakefileToDirectory:(NSString *)directoryPath;
+
++ (MakefileConfig *)getMakefileConfigFromFilePath:(NSString *)filePath;
 
 @end

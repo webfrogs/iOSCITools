@@ -26,4 +26,8 @@
     }
 }
 
++ (MakefileConfig *)getMakefileConfigFromFilePath:(NSString *)filePath{
+    return [[MakefileConfig alloc] initWithFilePath:filePath];
+}
+
 @end

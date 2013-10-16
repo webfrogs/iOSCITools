@@ -37,6 +37,7 @@
         
         [self addObserver:self forKeyPath:KVOKeyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
         
+        MakefileConfig *config = [MakefileManager getMakefileConfigFromFilePath:@"/Users/ccf/develop/github/CCMakefile4iOS/Makefile.cfg"];
     }
     return self;
 }

@@ -10,4 +10,27 @@
 
 @interface MakefileConfig : NSObject
 
+// compile setting
+@property(nonatomic, strong)NSString *configuration;
+@property(nonatomic, strong)NSString *appName;
+
+// http setting
+@property(nonatomic, strong)NSString *baseURL;
+
+// email setting
+@property(nonatomic, strong)NSString *emailDomain;
+@property(nonatomic, strong)NSString *mailReceivelist;
+@property(nonatomic, strong)NSString *mailGunApiKey;
+
+// iMessage setting
+@property(nonatomic, strong)NSString *iMsgList;
+
+// scp setting
+@property(nonatomic, strong)NSString *scpHost;
+@property(nonatomic, strong)NSString *scpUser;
+@property(nonatomic, strong)NSString *scpFilePath;
+
+
+- (id)initWithFilePath:(NSString *)filePath;
+
 @end
