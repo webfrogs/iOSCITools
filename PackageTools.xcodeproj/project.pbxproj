@@ -24,6 +24,10 @@
 		566B13BD180D955400142316 /* ProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13BC180D955400142316 /* ProjectInfo.m */; };
 		566B13C0180D9A9C00142316 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BE180D9A9C00142316 /* add.jpeg */; };
 		566B13C1180D9A9C00142316 /* delete.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BF180D9A9C00142316 /* delete.jpeg */; };
+		566B13C5180E148700142316 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
+		566B13C6180E175600142316 /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
+		566B13C9180E238400142316 /* MakefileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C8180E238400142316 /* MakefileManager.m */; };
+		566B13CC180E271E00142316 /* MakefileConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13CB180E271E00142316 /* MakefileConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,11 @@
 		566B13BC180D955400142316 /* ProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectInfo.m; sourceTree = "<group>"; };
 		566B13BE180D9A9C00142316 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
 		566B13BF180D9A9C00142316 /* delete.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = delete.jpeg; sourceTree = "<group>"; };
+		566B13C4180E148700142316 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		566B13C7180E238400142316 /* MakefileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakefileManager.h; sourceTree = "<group>"; };
+		566B13C8180E238400142316 /* MakefileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakefileManager.m; sourceTree = "<group>"; };
+		566B13CA180E271E00142316 /* MakefileConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakefileConfig.h; sourceTree = "<group>"; };
+		566B13CB180E271E00142316 /* MakefileConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakefileConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,9 +194,8 @@
 		5656164B18099FAD00E97BD7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				566B13BE180D9A9C00142316 /* add.jpeg */,
-				566B13BF180D9A9C00142316 /* delete.jpeg */,
-				5656164C18099FC900E97BD7 /* xcode-project.png */,
+				566B13C3180E13FA00142316 /* makefile */,
+				566B13C2180E13DB00142316 /* images */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -195,6 +203,8 @@
 		566B13B9180D950500142316 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				566B13C7180E238400142316 /* MakefileManager.h */,
+				566B13C8180E238400142316 /* MakefileManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,8 +214,28 @@
 			children = (
 				566B13BB180D955400142316 /* ProjectInfo.h */,
 				566B13BC180D955400142316 /* ProjectInfo.m */,
+				566B13CA180E271E00142316 /* MakefileConfig.h */,
+				566B13CB180E271E00142316 /* MakefileConfig.m */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		566B13C2180E13DB00142316 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				566B13BE180D9A9C00142316 /* add.jpeg */,
+				566B13BF180D9A9C00142316 /* delete.jpeg */,
+				5656164C18099FC900E97BD7 /* xcode-project.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		566B13C3180E13FA00142316 /* makefile */ = {
+			isa = PBXGroup;
+			children = (
+				566B13C4180E148700142316 /* Makefile */,
+			);
+			name = makefile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566B13C6180E175600142316 /* Makefile in Resources */,
 				566B13C0180D9A9C00142316 /* add.jpeg in Resources */,
 				565615D218082A8A00E97BD7 /* InfoPlist.strings in Resources */,
 				566B13C1180D9A9C00142316 /* delete.jpeg in Resources */,
@@ -310,10 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566B13C5180E148700142316 /* Makefile in Sources */,
 				565615DB18082A8A00E97BD7 /* AppDelegate.m in Sources */,
 				565615FF18082AE200E97BD7 /* MainViewController.m in Sources */,
 				565615D418082A8A00E97BD7 /* main.m in Sources */,
+				566B13CC180E271E00142316 /* MakefileConfig.m in Sources */,
 				566B13BD180D955400142316 /* ProjectInfo.m in Sources */,
+				566B13C9180E238400142316 /* MakefileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

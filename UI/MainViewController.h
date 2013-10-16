@@ -10,7 +10,7 @@
 
 @interface MainViewController : NSViewController
 
-- (void)addProjectWithPath:(NSString *)projectPath;
+- (void)addProjectWithPath:(NSString *)projectFilePath;
 - (void)deleteSelectedProject;
 
 @end

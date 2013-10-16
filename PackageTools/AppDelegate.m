@@ -34,13 +34,16 @@
     [filePanel setCanChooseFiles:YES];
     [filePanel setCanChooseDirectories:NO];
     [filePanel setAllowedFileTypes:@[@"xcodeproj"]];
-    if ([filePanel runModal] == NSFileHandlingPanelOKButton) {
-        NSURL *fileURL = [filePanel URL];
-        if ([fileURL isFileURL]) {
-//            NSLog(@"%@",[fileURL path]);
-            [self.mainController addProjectWithPath:[fileURL path]];
+    [filePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton) {
+            NSURL *fileURL = [filePanel URL];
+            
+            if ([fileURL isFileURL]) {
+                [self.mainController performSelector:@selector(addProjectWithPath:) withObject:[fileURL path] afterDelay:0.5];
+            }
         }
-    }
+    }];
+    
 }
 
 - (IBAction)deleteProject:(id)sender {

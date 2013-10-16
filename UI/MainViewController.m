@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import "MakefileManager.h"
 
 
 #define KVOKeyPath                  @"dataArray"
@@ -46,12 +46,12 @@
 }
 
 #pragma mark - Outer methods
-- (void)addProjectWithPath:(NSString *)projectPath{
-    if (projectPath.length == 0) {
+- (void)addProjectWithPath:(NSString *)projectFilePath{
+    if (projectFilePath.length == 0) {
         return;
     }
     
-    if ([self.dataArray containsObject:projectPath]) {
+    if ([self.dataArray containsObject:projectFilePath]) {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Project already exist."];
         [alert setAlertStyle:NSInformationalAlertStyle];
@@ -61,9 +61,12 @@
         return;
     }
     
-    [self.dataArray addObject:projectPath];
+    [self.dataArray addObject:projectFilePath];
     [self.dataArray writeToFile:[self getProjectInfoPlistPath] atomically:YES];
     self.dataArray = self.dataArray;
+    
+    [MakefileManager addMakefileToDirectory:[projectFilePath stringByDeletingLastPathComponent]];
+    
 }
 
 - (void)deleteSelectedProject{
@@ -92,7 +95,8 @@
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
     if ([tableColumn.identifier isEqualToString:@"ProjectColumn"]) {
-        cellView.textField.stringValue = self.dataArray[row];
+        NSURL *fileUrl = [NSURL fileURLWithPath:self.dataArray[row]];
+        cellView.textField.stringValue = [fileUrl lastPathComponent];
         
     }
     
@@ -104,5 +108,6 @@
     NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
     return [bundlePath stringByAppendingPathComponent:@"projectInfo.plist"];
 }
+
 
 @end
