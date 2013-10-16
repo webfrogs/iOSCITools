@@ -50,4 +50,8 @@
     [self.mainController deleteSelectedProject];
 }
 
+- (IBAction)runMake:(id)sender {
+    [self.mainController runMake];
+}
+
 @end

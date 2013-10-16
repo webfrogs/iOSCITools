@@ -664,7 +664,7 @@
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="bmK-1o-S3q"/>
                     <toolbarItem implicitItemIdentifier="D4EC9AB8-F364-4D30-95D7-D1CEEE58C6E4" label="Add" paletteLabel="Add" tag="-1" image="add" id="qmY-rb-KyX">
                         <connections>
-                            <action selector="addProject:" target="494" id="cpw-Ua-Ra1"/>
+                            <action selector="addProject:" target="494" id="039-Wi-7KQ"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="F3F20811-73FB-481E-A65B-6D0E07E45F29" label="Delete" paletteLabel="Delete" tag="-1" image="delete" id="d87-Zb-utR">
@@ -672,11 +672,17 @@
                             <action selector="deleteProject:" target="494" id="BR5-rt-bGk"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="8383DA13-03A0-4640-BC27-8982CE97AFAE" label="make" paletteLabel="make" tag="-1" id="RzX-GK-DE1">
+                        <connections>
+                            <action selector="runMake:" target="494" id="omR-0d-OKP"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="qmY-rb-KyX"/>
                     <toolbarItem reference="d87-Zb-utR"/>
                     <toolbarItem reference="bmK-1o-S3q"/>
+                    <toolbarItem reference="RzX-GK-DE1"/>
                 </defaultToolbarItems>
             </toolbar>
         </window>
