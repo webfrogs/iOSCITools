@@ -8,11 +8,14 @@
 
 #import "MainViewController.h"
 #import "MakefileManager.h"
+#import "ConfigController.h"
 
 
 #define KVOKeyPath                  @"dataArray"
 
-@interface MainViewController ()<NSTableViewDelegate,NSTableViewDataSource>
+@interface MainViewController ()<NSTableViewDelegate,NSTableViewDataSource>{
+    ConfigController *_configSheet;
+}
 
 @property (weak) IBOutlet NSTableView *tableView;
 
@@ -51,6 +54,7 @@
 
 #pragma mark - Outer methods
 - (void)addProjectWithPath:(NSString *)projectFilePath{
+    
     if (projectFilePath.length == 0) {
         return;
     }
@@ -64,6 +68,14 @@
                           modalDelegate:nil didEndSelector:nil contextInfo:nil];
         return;
     }
+    
+    if (_configSheet == nil) {
+        _configSheet = [[ConfigController alloc] init];
+    }
+    
+    [_configSheet showSheet];
+    
+    return;
     
     [self.dataArray addObject:projectFilePath];
     [self.dataArray writeToFile:[self getProjectInfoPlistPath] atomically:YES];
@@ -84,6 +96,13 @@
 }
 
 - (void)runMake{
+    if (_configSheet == nil) {
+        _configSheet = [[ConfigController alloc] init];
+    }
+    
+    [_configSheet showSheet];
+    return;
+    
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow >= 0 && selectedRow < self.dataArray.count) {
         NSString *projectPath = self.dataArray[selectedRow];

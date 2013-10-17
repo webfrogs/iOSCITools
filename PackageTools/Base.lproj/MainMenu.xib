@@ -694,6 +694,7 @@
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
         <userDefaultsController representsSharedInstance="YES" id="fUV-Mi-2aj"/>
+        <customObject id="U8F-e3-ysm" customClass="ConfigController"/>
     </objects>
     <resources>
         <image name="add" width="204" height="204"/>

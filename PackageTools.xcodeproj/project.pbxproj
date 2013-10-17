@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5644F75618103A240078C76C /* ConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F75518103A240078C76C /* ConfigController.m */; };
+		5644F75818103A3B0078C76C /* ConfigSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5644F75718103A3B0078C76C /* ConfigSheet.xib */; };
 		565615C818082A8A00E97BD7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565615C718082A8A00E97BD7 /* Cocoa.framework */; };
 		565615D218082A8A00E97BD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 565615D018082A8A00E97BD7 /* InfoPlist.strings */; };
 		565615D418082A8A00E97BD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615D318082A8A00E97BD7 /* main.m */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5644F75418103A240078C76C /* ConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigController.h; sourceTree = "<group>"; };
+		5644F75518103A240078C76C /* ConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigController.m; sourceTree = "<group>"; };
+		5644F75718103A3B0078C76C /* ConfigSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigSheet.xib; sourceTree = "<group>"; };
 		565615C418082A8A00E97BD7 /* PackageTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackageTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565615C718082A8A00E97BD7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		565615CA18082A8A00E97BD7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -187,6 +192,9 @@
 				565615FC18082AE200E97BD7 /* MainViewController.h */,
 				565615FD18082AE200E97BD7 /* MainViewController.m */,
 				565615FE18082AE200E97BD7 /* MainViewController.xib */,
+				5644F75418103A240078C76C /* ConfigController.h */,
+				5644F75518103A240078C76C /* ConfigController.m */,
+				5644F75718103A3B0078C76C /* ConfigSheet.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 				565615D218082A8A00E97BD7 /* InfoPlist.strings in Resources */,
 				566B13C1180D9A9C00142316 /* delete.jpeg in Resources */,
 				565615E018082A8A00E97BD7 /* Images.xcassets in Resources */,
+				5644F75818103A3B0078C76C /* ConfigSheet.xib in Resources */,
 				5656160018082AE200E97BD7 /* MainViewController.xib in Resources */,
 				565615D818082A8A00E97BD7 /* Credits.rtf in Resources */,
 				565615DE18082A8A00E97BD7 /* MainMenu.xib in Resources */,
@@ -348,6 +357,7 @@
 				566B13CC180E271E00142316 /* MakefileConfig.m in Sources */,
 				566B13BD180D955400142316 /* ProjectInfo.m in Sources */,
 				566B13C9180E238400142316 /* MakefileManager.m in Sources */,
+				5644F75618103A240078C76C /* ConfigController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

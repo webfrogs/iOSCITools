@@ -40,6 +40,7 @@
             
             if ([fileURL isFileURL]) {
                 [self.mainController performSelector:@selector(addProjectWithPath:) withObject:[fileURL path] afterDelay:0.5];
+//                [self.mainController addProjectWithPath:[fileURL path]];
             }
         }
     }];
