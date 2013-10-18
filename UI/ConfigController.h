@@ -11,6 +11,7 @@
 @interface ConfigController : NSObject
 
 @property(assign)IBOutlet NSWindow *sheet;
+@property(assign)IBOutlet NSButton *cancelBtn;
 
 - (void)showSheet;
 

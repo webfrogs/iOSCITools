@@ -10,6 +10,8 @@
 
 @implementation ConfigController
 
+
+#pragma mark - Outer methods
 - (void)showSheet{
     if (!self.sheet) {
         [[NSBundle mainBundle]loadNibNamed:@"ConfigSheet" owner:self topLevelObjects:nil];
@@ -19,7 +21,17 @@
     [NSApp beginSheet:self.sheet modalForWindow:[[NSApp delegate] window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
-- (IBAction)closeSheet:(id)sender{
+#pragma mark - Events
+- (IBAction)saveBtnClicked:(id)sender{
+    [self hideSheet];
+}
+
+- (IBAction)cancelBtnClicked:(id)sender{
+    [self hideSheet];
+}
+
+#pragma mark - Inner methods
+- (void)hideSheet{
     [NSApp endSheet:self.sheet];
     [self.sheet close];
     self.sheet = nil;
