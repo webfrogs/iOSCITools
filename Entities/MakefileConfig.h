@@ -19,7 +19,7 @@
 
 // email setting
 @property(nonatomic, strong)NSString *emailDomain;
-@property(nonatomic, strong)NSString *mailReceiveList;
+@property(nonatomic, strong)NSString *emailReceiveList;
 @property(nonatomic, strong)NSString *mailGunApiKey;
 
 // iMessage setting

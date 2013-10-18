@@ -7,7 +7,17 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ConfigController">
             <connections>
+                <outlet property="EmailDomainTextField" destination="Qja-Mh-b1c" id="UOp-GB-egm"/>
+                <outlet property="EmailReceiverTextField" destination="nhF-pf-G9j" id="yjD-uh-wIM"/>
+                <outlet property="MailGunAPITextField" destination="D2r-eR-elR" id="qxo-oF-ik6"/>
+                <outlet property="addIMsgTextField" destination="sOL-fA-a9n" id="bVR-3l-YvH"/>
+                <outlet property="appNameTextField" destination="MLp-5L-Ztt" id="KzY-L1-0hy"/>
+                <outlet property="baseURLTextField" destination="Lgk-Sh-YTc" id="bIz-iJ-BuB"/>
                 <outlet property="cancelBtn" destination="qnF-mT-3VB" id="VbH-gL-TIw"/>
+                <outlet property="configComboBox" destination="hhF-D1-MJh" id="JfY-kB-DQ7"/>
+                <outlet property="scpFilePathTextField" destination="cDk-QQ-wU2" id="97G-kh-xvF"/>
+                <outlet property="scpHostTextField" destination="efC-Uh-HlC" id="6iF-Ik-vnj"/>
+                <outlet property="scpUserTextFild" destination="xmX-uq-VeS" id="qm0-OS-dQQ"/>
                 <outlet property="sheet" destination="1" id="6UB-mL-C6Y"/>
             </connections>
         </customObject>
@@ -226,9 +236,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1q-2v-RwM">
-                        <rect key="frame" x="70" y="111" width="95" height="17"/>
+                        <rect key="frame" x="88" y="115" width="76" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Email Domain:" id="D3P-oN-eZZ">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Scp Host:   " id="D3P-oN-eZZ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -244,9 +254,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-A2-uCQ">
-                        <rect key="frame" x="104" y="86" width="61" height="17"/>
+                        <rect key="frame" x="102" y="86" width="62" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Receiver:" id="TY9-wr-5Cf">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Scp user:" id="TY9-wr-5Cf">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -262,9 +272,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rn0-sw-QjF">
-                        <rect key="frame" x="55" y="58" width="110" height="17"/>
+                        <rect key="frame" x="78" y="59" width="86" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="MailGun API key:" id="w1R-vn-43n">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Scp file path:" id="w1R-vn-43n">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -341,7 +351,7 @@
                         </scroller>
                     </scrollView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOL-fA-a9n">
-                        <rect key="frame" x="217" y="196" width="144" height="39"/>
+                        <rect key="frame" x="217" y="196" width="144" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IIQ-Gs-qAm">
                             <font key="font" metaFont="system"/>

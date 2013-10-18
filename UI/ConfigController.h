@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MakefileConfig.h"
 
 @interface ConfigController : NSObject
 
 @property(assign)IBOutlet NSWindow *sheet;
 @property(assign)IBOutlet NSButton *cancelBtn;
+
+- (id)initWithConfig:(MakefileConfig *)config;
 
 - (void)showSheet;
 
