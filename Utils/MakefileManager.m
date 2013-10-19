@@ -26,8 +26,8 @@
     }
 }
 
-+ (MakefileConfig *)getMakefileConfigFromFilePath:(NSString *)filePath{
-    return [[MakefileConfig alloc] initWithFilePath:filePath];
++ (MakefileConfig *)getMakefileConfigFromDirectory:(NSString *)directoryPath{
+    return [[MakefileConfig alloc] initWithFilePath:[directoryPath stringByAppendingPathComponent:MakefileCfgName]];
 }
 
 + (void)writeConfigToDirectory:(MakefileConfig *)config directory:(NSString *)directoryPath{

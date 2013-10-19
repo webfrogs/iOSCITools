@@ -12,6 +12,7 @@
 
 - (void)addProjectWithPath:(NSString *)projectFilePath;
 - (void)deleteSelectedProject;
+- (void)editProjectMakeConfig;
 - (void)runMake;
 
 

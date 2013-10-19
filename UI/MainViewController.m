@@ -96,6 +96,20 @@
     }
 }
 
+- (void)editProjectMakeConfig{
+    NSInteger selectedRow = [self.tableView selectedRow];
+    if (selectedRow >= 0 && selectedRow < self.dataArray.count) {
+        NSString *projectPath = self.dataArray[selectedRow];
+        NSString *projectDirectory = [projectPath stringByDeletingLastPathComponent];
+        MakefileConfig *config = [MakefileManager getMakefileConfigFromDirectory:projectDirectory];
+        _configSheet = [[ConfigController alloc] initWithConfig:config];
+        _configSheet.configSavedBlock = ^(MakefileConfig *config){
+            [MakefileManager writeConfigToDirectory:config directory:projectDirectory];
+        };
+        [_configSheet showSheet];
+    }
+}
+
 - (void)runMake{
         
     NSInteger selectedRow = [self.tableView selectedRow];

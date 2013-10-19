@@ -75,7 +75,7 @@
 //        [NSBundle loadNibNamed:@"ConfigSheet" owner:self];
     }
     
-    [self updateUI];
+    [self handleConfigToUI];
     
     [NSApp beginSheet:self.sheet modalForWindow:[[NSApp delegate] window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
@@ -110,7 +110,7 @@
 - (IBAction)saveBtnClicked:(id)sender{
     [self hideSheet];
     
-    [self convertIMsgListToObject];
+    [self handleConfigFromUI];
     
     if (self.configSavedBlock) {
         self.configSavedBlock(_config);
@@ -180,8 +180,8 @@
     }
 }
 
-- (void)updateUI{
-    [self.cancelBtn setEnabled:_isEdit];
+- (void)handleConfigToUI{
+    [self.cancelBtn setHidden:!_isEdit];
     [self.iMsgDeleteBtn setEnabled:NO];
     [self convertIMsgListFromObject];
     
@@ -220,6 +220,21 @@
     if (_config.scpFilePath.length > 0) {
         self.scpFilePathTextField.stringValue = _config.scpFilePath;
     }
+    
+}
+
+- (void)handleConfigFromUI{
+    [self convertIMsgListToObject];
+    
+    _config.configuration = self.configComboBox.stringValue;
+    _config.appName = self.appNameTextField.stringValue;
+    _config.baseURL = self.baseURLTextField.stringValue;
+    _config.emailDomain = self.EmailDomainTextField.stringValue;
+    _config.emailReceiveList = self.EmailReceiverTextField.stringValue;
+    _config.mailGunApiKey = self.MailGunAPITextField.stringValue;
+    _config.scpHost = self.scpHostTextField.stringValue;
+    _config.scpUser = self.scpUserTextFild.stringValue;
+    _config.scpFilePath = self.scpFilePathTextField.stringValue;
     
 }
 

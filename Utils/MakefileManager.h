@@ -13,7 +13,7 @@
 
 + (void)addMakefileToDirectory:(NSString *)directoryPath;
 
-+ (MakefileConfig *)getMakefileConfigFromFilePath:(NSString *)filePath;
++ (MakefileConfig *)getMakefileConfigFromDirectory:(NSString *)directoryPath;
 
 + (void)writeConfigToDirectory:(MakefileConfig *)config directory:(NSString *)directoryPath;
 @end

@@ -23,7 +23,6 @@
 		565615FF18082AE200E97BD7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615FD18082AE200E97BD7 /* MainViewController.m */; };
 		5656160018082AE200E97BD7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565615FE18082AE200E97BD7 /* MainViewController.xib */; };
 		5656164D18099FC900E97BD7 /* xcode-project.png in Resources */ = {isa = PBXBuildFile; fileRef = 5656164C18099FC900E97BD7 /* xcode-project.png */; };
-		566B13BD180D955400142316 /* ProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13BC180D955400142316 /* ProjectInfo.m */; };
 		566B13C0180D9A9C00142316 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BE180D9A9C00142316 /* add.jpeg */; };
 		566B13C1180D9A9C00142316 /* delete.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BF180D9A9C00142316 /* delete.jpeg */; };
 		566B13C5180E148700142316 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
@@ -69,8 +68,6 @@
 		565615FD18082AE200E97BD7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		565615FE18082AE200E97BD7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		5656164C18099FC900E97BD7 /* xcode-project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xcode-project.png"; sourceTree = "<group>"; };
-		566B13BB180D955400142316 /* ProjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectInfo.h; sourceTree = "<group>"; };
-		566B13BC180D955400142316 /* ProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectInfo.m; sourceTree = "<group>"; };
 		566B13BE180D9A9C00142316 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
 		566B13BF180D9A9C00142316 /* delete.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = delete.jpeg; sourceTree = "<group>"; };
 		566B13C4180E148700142316 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -220,8 +217,6 @@
 		566B13BA180D953C00142316 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				566B13BB180D955400142316 /* ProjectInfo.h */,
-				566B13BC180D955400142316 /* ProjectInfo.m */,
 				566B13CA180E271E00142316 /* MakefileConfig.h */,
 				566B13CB180E271E00142316 /* MakefileConfig.m */,
 			);
@@ -355,7 +350,6 @@
 				565615FF18082AE200E97BD7 /* MainViewController.m in Sources */,
 				565615D418082A8A00E97BD7 /* main.m in Sources */,
 				566B13CC180E271E00142316 /* MakefileConfig.m in Sources */,
-				566B13BD180D955400142316 /* ProjectInfo.m in Sources */,
 				566B13C9180E238400142316 /* MakefileManager.m in Sources */,
 				5644F75618103A240078C76C /* ConfigController.m in Sources */,
 			);

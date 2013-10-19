@@ -51,6 +51,10 @@
     [self.mainController deleteSelectedProject];
 }
 
+- (IBAction)editMakeConfig:(id)sender{
+    [self.mainController editProjectMakeConfig];
+}
+
 - (IBAction)runMake:(id)sender {
     [self.mainController runMake];
 }

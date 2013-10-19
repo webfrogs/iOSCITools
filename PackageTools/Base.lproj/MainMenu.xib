@@ -672,6 +672,11 @@
                             <action selector="deleteProject:" target="494" id="BR5-rt-bGk"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="AD532E54-FD41-4930-B8E2-B1ADAEF9D268" label="Edit" paletteLabel="Edit" tag="-1" id="lz3-0w-olZ">
+                        <connections>
+                            <action selector="editMakeConfig:" target="494" id="WeP-wd-Vxd"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="8383DA13-03A0-4640-BC27-8982CE97AFAE" label="make" paletteLabel="make" tag="-1" id="RzX-GK-DE1">
                         <connections>
                             <action selector="runMake:" target="494" id="omR-0d-OKP"/>
@@ -681,6 +686,7 @@
                 <defaultToolbarItems>
                     <toolbarItem reference="qmY-rb-KyX"/>
                     <toolbarItem reference="d87-Zb-utR"/>
+                    <toolbarItem reference="lz3-0w-olZ"/>
                     <toolbarItem reference="bmK-1o-S3q"/>
                     <toolbarItem reference="RzX-GK-DE1"/>
                 </defaultToolbarItems>
