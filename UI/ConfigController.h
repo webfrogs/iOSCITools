@@ -14,6 +14,8 @@
 @property(assign)IBOutlet NSWindow *sheet;
 @property(assign)IBOutlet NSButton *cancelBtn;
 
+@property(copy)void (^configSavedBlock)(MakefileConfig *config);
+
 - (id)initWithConfig:(MakefileConfig *)config;
 
 - (void)showSheet;

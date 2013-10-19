@@ -69,19 +69,20 @@
         return;
     }
     
-    if (_configSheet == nil) {
-        _configSheet = [[ConfigController alloc] init];
-    }
-    
+    _configSheet = [[ConfigController alloc] init];
+    __weak MainViewController *wSelf = self;
+    _configSheet.configSavedBlock = ^(MakefileConfig *config){
+        [wSelf.dataArray addObject:projectFilePath];
+        [wSelf.dataArray writeToFile:[wSelf getProjectInfoPlistPath] atomically:YES];
+        wSelf.dataArray = wSelf.dataArray;
+        
+        NSString *directory = [projectFilePath stringByDeletingLastPathComponent];
+        [MakefileManager addMakefileToDirectory:directory];
+        [MakefileManager writeConfigToDirectory:config directory:directory];
+        
+    };
     [_configSheet showSheet];
     
-    return;
-    
-    [self.dataArray addObject:projectFilePath];
-    [self.dataArray writeToFile:[self getProjectInfoPlistPath] atomically:YES];
-    self.dataArray = self.dataArray;
-    
-    [MakefileManager addMakefileToDirectory:[projectFilePath stringByDeletingLastPathComponent]];
     
 }
 
@@ -96,13 +97,7 @@
 }
 
 - (void)runMake{
-    if (_configSheet == nil) {
-        _configSheet = [[ConfigController alloc] init];
-    }
-    
-    [_configSheet showSheet];
-    return;
-    
+        
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow >= 0 && selectedRow < self.dataArray.count) {
         NSString *projectPath = self.dataArray[selectedRow];

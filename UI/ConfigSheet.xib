@@ -15,6 +15,8 @@
                 <outlet property="baseURLTextField" destination="Lgk-Sh-YTc" id="bIz-iJ-BuB"/>
                 <outlet property="cancelBtn" destination="qnF-mT-3VB" id="VbH-gL-TIw"/>
                 <outlet property="configComboBox" destination="hhF-D1-MJh" id="JfY-kB-DQ7"/>
+                <outlet property="iMsgDeleteBtn" destination="rRf-sm-as2" id="TXx-fU-hgN"/>
+                <outlet property="iMsgListTableView" destination="7Ve-pT-bMe" id="Pej-ng-THW"/>
                 <outlet property="scpFilePathTextField" destination="cDk-QQ-wU2" id="97G-kh-xvF"/>
                 <outlet property="scpHostTextField" destination="efC-Uh-HlC" id="6iF-Ik-vnj"/>
                 <outlet property="scpUserTextFild" destination="xmX-uq-VeS" id="qm0-OS-dQQ"/>
@@ -289,21 +291,21 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-AI-lf3">
+                    <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-AI-lf3">
                         <rect key="frame" x="20" y="167" width="189" height="97"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" id="Or3-lP-Swb">
                             <rect key="frame" x="1" y="1" width="187" height="95"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="7Ve-pT-bMe">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="7Ve-pT-bMe">
                                     <rect key="frame" x="0.0" y="0.0" width="187" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="184" minWidth="40" maxWidth="1000" id="KV1-at-RsX">
+                                        <tableColumn identifier="iMsgCol" width="184" minWidth="40" maxWidth="1000" id="KV1-at-RsX">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -323,7 +325,7 @@
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udm-6U-QdK">
                                                             <rect key="frame" x="0.0" y="0.0" width="184" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="gMX-B3-y72">
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" id="gMX-B3-y72">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -337,16 +339,20 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-2" id="c4c-f2-06a"/>
+                                        <outlet property="delegate" destination="-2" id="2D6-6g-D8v"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" id="U16-YE-eds">
-                            <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" id="U16-YE-eds">
+                            <rect key="frame" x="1" y="80" width="187" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" id="piw-jK-yGR">
-                            <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" id="piw-jK-yGR">
+                            <rect key="frame" x="172" y="1" width="16" height="95"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -366,6 +372,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="iMsgAddBtnClicked:" target="-2" id="5n3-DO-gQt"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-sm-as2">
                         <rect key="frame" x="255" y="166" width="38" height="23"/>
@@ -374,6 +383,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="iMsgDeleteBtnClicked:" target="-2" id="CWu-NU-sM8"/>
+                        </connections>
                     </button>
                     <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-mT-3VB">
                         <rect key="frame" x="211" y="8" width="82" height="32"/>
@@ -399,7 +411,6 @@ Gw
                 </subviews>
             </view>
         </window>
-        <customObject id="ptq-22-tZh" customClass="ConfigController"/>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="8" height="8"/>

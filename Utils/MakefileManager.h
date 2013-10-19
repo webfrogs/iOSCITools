@@ -15,4 +15,5 @@
 
 + (MakefileConfig *)getMakefileConfigFromFilePath:(NSString *)filePath;
 
++ (void)writeConfigToDirectory:(MakefileConfig *)config directory:(NSString *)directoryPath;
 @end

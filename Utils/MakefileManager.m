@@ -30,4 +30,8 @@
     return [[MakefileConfig alloc] initWithFilePath:filePath];
 }
 
++ (void)writeConfigToDirectory:(MakefileConfig *)config directory:(NSString *)directoryPath{
+    [config writeToFilePath:[directoryPath stringByAppendingPathComponent:MakefileCfgName]];
+}
+
 @end

@@ -8,8 +8,9 @@
 
 #import "ConfigController.h"
 
+#define KVOPath                 @"iMsgListArray"
 
-@interface ConfigController (){
+@interface ConfigController ()<NSTableViewDelegate,NSTableViewDataSource>{
     MakefileConfig *_config;
     BOOL _isEdit;
 }
@@ -24,7 +25,10 @@
 @property(assign)IBOutlet NSTextField *scpHostTextField;
 @property(assign)IBOutlet NSTextField *scpUserTextFild;
 @property(assign)IBOutlet NSTextField *scpFilePathTextField;
+@property(assign)IBOutlet NSTableView *iMsgListTableView;
+@property(assign)IBOutlet NSButton *iMsgDeleteBtn;
 
+@property(strong)NSArray *iMsgListArray;
 
 
 @end
@@ -37,6 +41,10 @@
         
         _config = [[MakefileConfig alloc] init];
         _config.configuration = @"Release";
+        
+        [self addObserver:self forKeyPath:KVOPath options:NSKeyValueObservingOptionNew context:nil];
+        
+        NSLog(@"CC init.%@",self);
     }
     return self;
 }
@@ -46,13 +54,18 @@
         return [self init];
     }
     
-    if (self = [super init]) {
+    if (self = [self init]) {
         
         _config = config;
         _isEdit = YES;
     }
     
     return self;
+}
+
+- (void)dealloc{
+    [self removeObserver:self forKeyPath:KVOPath];
+    NSLog(@"CC dealloc.%@",self);
 }
 
 #pragma mark - Outer methods
@@ -67,13 +80,78 @@
     [NSApp beginSheet:self.sheet modalForWindow:[[NSApp delegate] window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
+#pragma mark - NSTableView delegate and datasource
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return self.iMsgListArray.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    if ([cellView.identifier isEqualToString:@"iMsgCol"]) {
+        cellView.textField.stringValue = self.iMsgListArray[row];
+        
+    }
+    
+    return cellView;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    [self.iMsgDeleteBtn setEnabled:YES];
+}
+
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:KVOPath]) {
+        [self.iMsgListTableView reloadData];
+    }
+}
+
 #pragma mark - Events
 - (IBAction)saveBtnClicked:(id)sender{
     [self hideSheet];
+    
+    [self convertIMsgListToObject];
+    
+    if (self.configSavedBlock) {
+        self.configSavedBlock(_config);
+    }
+    
+    
 }
 
 - (IBAction)cancelBtnClicked:(id)sender{
     [self hideSheet];
+}
+
+- (IBAction)iMsgAddBtnClicked:(id)sender{
+    NSString *inputIMsg = self.addIMsgTextField.stringValue;
+    if (inputIMsg.length > 0) {
+        NSMutableArray *iMsgArray = [[NSMutableArray alloc] initWithArray:self.iMsgListArray];
+        [iMsgArray addObject:inputIMsg];
+        self.iMsgListArray = iMsgArray;
+        
+        self.addIMsgTextField.stringValue = @"";
+        
+        NSInteger newRowIndex = self.iMsgListArray.count -1;
+
+        [self.iMsgListTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRowIndex] byExtendingSelection:NO];
+        [self.iMsgListTableView scrollRowToVisible:newRowIndex];
+    }
+}
+
+- (IBAction)iMsgDeleteBtnClicked:(id)sender{
+    NSInteger selectedRow = self.iMsgListTableView.selectedRow;
+    if (selectedRow >= 0 && selectedRow < self.iMsgListArray.count) {
+        NSMutableArray *iMsgArray = [[NSMutableArray alloc] initWithArray:self.iMsgListArray];
+        [iMsgArray removeObjectAtIndex:selectedRow];
+        self.iMsgListArray = iMsgArray;
+        
+        if (selectedRow < self.iMsgListArray.count) {
+            [self.iMsgListTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedRow] byExtendingSelection:NO];
+        }
+        
+
+    }
 }
 
 #pragma mark - Inner methods
@@ -83,8 +161,29 @@
     self.sheet = nil;
 }
 
+- (void)convertIMsgListFromObject{
+    self.iMsgListArray = nil;
+    if (_config.iMsgList.length > 0) {
+        NSArray *iMsgList = [_config.iMsgList componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        self.iMsgListArray = [NSMutableArray arrayWithArray:iMsgList];
+    }
+}
+
+- (void)convertIMsgListToObject{
+    _config.iMsgList = nil;
+    if (self.iMsgListArray.count > 0) {
+        NSMutableString *iMsgListStr = [[NSMutableString alloc]init];
+        for (NSString *iMsg in self.iMsgListArray) {
+            [iMsgListStr appendString:[NSString stringWithFormat:@"%@ ",iMsg]];
+        }
+        _config.iMsgList = [iMsgListStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+}
+
 - (void)updateUI{
     [self.cancelBtn setEnabled:_isEdit];
+    [self.iMsgDeleteBtn setEnabled:NO];
+    [self convertIMsgListFromObject];
     
     if (_config.configuration.length > 0) {
         self.configComboBox.stringValue = _config.configuration;
