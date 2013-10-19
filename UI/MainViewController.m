@@ -9,12 +9,14 @@
 #import "MainViewController.h"
 #import "MakefileManager.h"
 #import "ConfigController.h"
+#import "MakeController.h"
 
 
 #define KVOKeyPath                  @"dataArray"
 
 @interface MainViewController ()<NSTableViewDelegate,NSTableViewDataSource>{
     ConfigController *_configSheet;
+    MakeController *_makeSheet;
 }
 
 @property (weak) IBOutlet NSTableView *tableView;
@@ -116,7 +118,8 @@
     if (selectedRow >= 0 && selectedRow < self.dataArray.count) {
         NSString *projectPath = self.dataArray[selectedRow];
         
-        runCommand([NSString stringWithFormat:@"make -C %@",[projectPath stringByDeletingLastPathComponent]]);
+        _makeSheet = [[MakeController alloc] init];
+        [_makeSheet showSheet];
         
 //        NSTask *task;
 //        task = [[NSTask alloc] init];

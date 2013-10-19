@@ -44,7 +44,6 @@
         
         [self addObserver:self forKeyPath:KVOPath options:NSKeyValueObservingOptionNew context:nil];
         
-        NSLog(@"CC init.%@",self);
     }
     return self;
 }
@@ -65,14 +64,18 @@
 
 - (void)dealloc{
     [self removeObserver:self forKeyPath:KVOPath];
-    NSLog(@"CC dealloc.%@",self);
 }
 
 #pragma mark - Outer methods
 - (void)showSheet{
     if (!self.sheet) {
-        [[NSBundle mainBundle]loadNibNamed:@"ConfigSheet" owner:self topLevelObjects:nil];
-//        [NSBundle loadNibNamed:@"ConfigSheet" owner:self];
+        NSBundle *mainBundle = [NSBundle mainBundle];
+        if ([mainBundle respondsToSelector:@selector(loadNibNamed:owner:topLevelObjects:)]) {
+            [[NSBundle mainBundle]loadNibNamed:@"ConfigSheet" owner:self topLevelObjects:nil];
+        }else{
+            [NSBundle loadNibNamed:@"ConfigSheet" owner:self];
+        }
+        
     }
     
     [self handleConfigToUI];
