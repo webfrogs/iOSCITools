@@ -28,6 +28,12 @@
     
 }
 
+- (BOOL) applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+    [self.window makeKeyAndOrderFront:self];
+    return NO;
+}
+
 #pragma mark - ToolBarAction
 - (IBAction)addProject:(id)sender {
     NSOpenPanel *filePanel = [NSOpenPanel openPanel];

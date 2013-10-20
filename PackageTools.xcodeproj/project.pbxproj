@@ -50,7 +50,7 @@
 		5644F75418103A240078C76C /* ConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigController.h; sourceTree = "<group>"; };
 		5644F75518103A240078C76C /* ConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigController.m; sourceTree = "<group>"; };
 		5644F75718103A3B0078C76C /* ConfigSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigSheet.xib; sourceTree = "<group>"; };
-		565615C418082A8A00E97BD7 /* PackageTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackageTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		565615C418082A8A00E97BD7 /* iOS CI Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CI Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565615C718082A8A00E97BD7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		565615CA18082A8A00E97BD7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		565615CB18082A8A00E97BD7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -128,7 +128,7 @@
 		565615C518082A8A00E97BD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				565615C418082A8A00E97BD7 /* PackageTools.app */,
+				565615C418082A8A00E97BD7 /* iOS CI Tools.app */,
 				565615E518082A8A00E97BD7 /* PackageToolsTests.xctest */,
 			);
 			name = Products;
@@ -279,7 +279,7 @@
 			);
 			name = PackageTools;
 			productName = PackageTools;
-			productReference = 565615C418082A8A00E97BD7 /* PackageTools.app */;
+			productReference = 565615C418082A8A00E97BD7 /* iOS CI Tools.app */;
 			productType = "com.apple.product-type.application";
 		};
 		565615E418082A8A00E97BD7 /* PackageToolsTests */ = {
@@ -512,7 +512,7 @@
 				GCC_PREFIX_HEADER = "PackageTools/PackageTools-Prefix.pch";
 				INFOPLIST_FILE = "PackageTools/PackageTools-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "iOS CI Tools";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -526,7 +526,7 @@
 				GCC_PREFIX_HEADER = "PackageTools/PackageTools-Prefix.pch";
 				INFOPLIST_FILE = "PackageTools/PackageTools-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "iOS CI Tools";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
