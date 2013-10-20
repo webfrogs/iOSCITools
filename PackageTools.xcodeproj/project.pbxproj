@@ -31,6 +31,7 @@
 		566B13CC180E271E00142316 /* MakefileConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13CB180E271E00142316 /* MakefileConfig.m */; };
 		5673E32B18126661000768F6 /* MakeSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5673E32A18126661000768F6 /* MakeSheet.xib */; };
 		5673E32E18126677000768F6 /* MakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5673E32D18126677000768F6 /* MakeController.m */; };
+		5673E331181358CD000768F6 /* CommandManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5673E330181358CD000768F6 /* CommandManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		5673E32A18126661000768F6 /* MakeSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeSheet.xib; sourceTree = "<group>"; };
 		5673E32C18126677000768F6 /* MakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeController.h; sourceTree = "<group>"; };
 		5673E32D18126677000768F6 /* MakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeController.m; sourceTree = "<group>"; };
+		5673E32F181358CD000768F6 /* CommandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
+		5673E330181358CD000768F6 /* CommandManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +221,8 @@
 			children = (
 				566B13C7180E238400142316 /* MakefileManager.h */,
 				566B13C8180E238400142316 /* MakefileManager.m */,
+				5673E32F181358CD000768F6 /* CommandManager.h */,
+				5673E330181358CD000768F6 /* CommandManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			files = (
 				566B13C5180E148700142316 /* Makefile in Sources */,
 				565615DB18082A8A00E97BD7 /* AppDelegate.m in Sources */,
+				5673E331181358CD000768F6 /* CommandManager.m in Sources */,
 				565615FF18082AE200E97BD7 /* MainViewController.m in Sources */,
 				565615D418082A8A00E97BD7 /* main.m in Sources */,
 				566B13CC180E271E00142316 /* MakefileConfig.m in Sources */,

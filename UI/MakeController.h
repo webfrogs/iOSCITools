@@ -10,6 +10,7 @@
 
 @interface MakeController : NSObject
 
+@property(strong)NSString *projectDir;
 
 - (void)showSheet;
 

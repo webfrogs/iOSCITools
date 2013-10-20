@@ -119,6 +119,7 @@
         NSString *projectPath = self.dataArray[selectedRow];
         
         _makeSheet = [[MakeController alloc] init];
+        _makeSheet.projectDir = [projectPath stringByDeletingLastPathComponent];
         [_makeSheet showSheet];
         
 //        NSTask *task;
