@@ -83,6 +83,7 @@
 		5673E32D18126677000768F6 /* MakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeController.m; sourceTree = "<group>"; };
 		5673E32F181358CD000768F6 /* CommandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
 		5673E330181358CD000768F6 /* CommandManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandManager.m; sourceTree = "<group>"; };
+		5673E3321813BBA6000768F6 /* GlobalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +224,7 @@
 				566B13C8180E238400142316 /* MakefileManager.m */,
 				5673E32F181358CD000768F6 /* CommandManager.h */,
 				5673E330181358CD000768F6 /* CommandManager.m */,
+				5673E3321813BBA6000768F6 /* GlobalConfig.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

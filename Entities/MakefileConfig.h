@@ -35,4 +35,10 @@
 
 - (void)writeToFilePath:(NSString *)filePath;
 
+- (BOOL)canDoUpload;
+
+- (BOOL)canSendEmail;
+
+- (BOOL)canSendIMsg;
+
 @end

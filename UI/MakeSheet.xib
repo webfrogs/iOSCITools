@@ -7,7 +7,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MakeController">
             <connections>
+                <outlet property="compileCheckBox" destination="njD-HI-SxR" id="yue-bG-67S"/>
+                <outlet property="emailCheckBox" destination="x2f-xq-az2" id="0Xn-8y-1md"/>
+                <outlet property="iMsgCheckBox" destination="2iW-vJ-RKt" id="AuS-6Q-f6b"/>
                 <outlet property="outputTextView" destination="T5i-gR-hQ2" id="cBR-8E-1DK"/>
+                <outlet property="spinner" destination="WtV-42-1FA" id="ikI-U6-xTR"/>
+                <outlet property="uploadCheckBox" destination="cbM-5K-oOS" id="8k1-Eq-VjF"/>
                 <outlet property="window" destination="1" id="705-wM-ugt"/>
             </connections>
         </customObject>
@@ -128,6 +133,10 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="WtV-42-1FA">
+                        <rect key="frame" x="89" y="28" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
                 </subviews>
             </view>
         </window>

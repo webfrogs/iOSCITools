@@ -57,6 +57,40 @@
     [str writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
+- (BOOL)canDoUpload{
+    BOOL result = YES;
+    
+    if (self.scpHost.length == 0 ||
+        self.scpUser.length == 0 ||
+        self.scpFilePath.length == 0) {
+        result = NO;
+    }
+    
+    return result;
+}
+
+- (BOOL)canSendEmail{
+    BOOL result = YES;
+    
+    if (self.emailDomain.length == 0 ||
+        self.emailReceiveList.length == 0 ||
+        self.mailGunApiKey.length == 0) {
+        result = NO;
+    }
+    
+    return result;
+}
+
+- (BOOL)canSendIMsg{
+    BOOL result = YES;
+    
+    if (self.iMsgList.length == 0) {
+        result = NO;
+    }
+    
+    return result;
+}
+
 #pragma mark - overwrite
 - (NSString *)description{
     NSMutableString *result = [NSMutableString stringWithString:@""];

@@ -15,6 +15,6 @@
 
 + (CommandManager *)defaultManager;
 
-- (void)runMakeAtDirectory:(NSString *)directory;
+- (void)runMakeAtDirectory:(NSString *)directory withOption:(unsigned int)option;
 
 @end
