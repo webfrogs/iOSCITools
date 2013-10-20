@@ -23,8 +23,6 @@
 		565615FF18082AE200E97BD7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615FD18082AE200E97BD7 /* MainViewController.m */; };
 		5656160018082AE200E97BD7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565615FE18082AE200E97BD7 /* MainViewController.xib */; };
 		5656164D18099FC900E97BD7 /* xcode-project.png in Resources */ = {isa = PBXBuildFile; fileRef = 5656164C18099FC900E97BD7 /* xcode-project.png */; };
-		566B13C0180D9A9C00142316 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BE180D9A9C00142316 /* add.jpeg */; };
-		566B13C1180D9A9C00142316 /* delete.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 566B13BF180D9A9C00142316 /* delete.jpeg */; };
 		566B13C5180E148700142316 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
 		566B13C6180E175600142316 /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
 		566B13C9180E238400142316 /* MakefileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C8180E238400142316 /* MakefileManager.m */; };
@@ -32,6 +30,10 @@
 		5673E32B18126661000768F6 /* MakeSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5673E32A18126661000768F6 /* MakeSheet.xib */; };
 		5673E32E18126677000768F6 /* MakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5673E32D18126677000768F6 /* MakeController.m */; };
 		5673E331181358CD000768F6 /* CommandManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5673E330181358CD000768F6 /* CommandManager.m */; };
+		5673E3371813F425000768F6 /* toolbarBtn_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3331813F424000768F6 /* toolbarBtn_add.png */; };
+		5673E3381813F425000768F6 /* toolbarBtn_config.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3341813F425000768F6 /* toolbarBtn_config.png */; };
+		5673E3391813F425000768F6 /* toolbarBtn_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3351813F425000768F6 /* toolbarBtn_delete.png */; };
+		5673E33A1813F425000768F6 /* toolbarBtn_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3361813F425000768F6 /* toolbarBtn_make.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,6 @@
 		565615FD18082AE200E97BD7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		565615FE18082AE200E97BD7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		5656164C18099FC900E97BD7 /* xcode-project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xcode-project.png"; sourceTree = "<group>"; };
-		566B13BE180D9A9C00142316 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
-		566B13BF180D9A9C00142316 /* delete.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = delete.jpeg; sourceTree = "<group>"; };
 		566B13C4180E148700142316 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		566B13C7180E238400142316 /* MakefileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakefileManager.h; sourceTree = "<group>"; };
 		566B13C8180E238400142316 /* MakefileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakefileManager.m; sourceTree = "<group>"; };
@@ -84,6 +84,10 @@
 		5673E32F181358CD000768F6 /* CommandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
 		5673E330181358CD000768F6 /* CommandManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandManager.m; sourceTree = "<group>"; };
 		5673E3321813BBA6000768F6 /* GlobalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
+		5673E3331813F424000768F6 /* toolbarBtn_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_add.png; sourceTree = "<group>"; };
+		5673E3341813F425000768F6 /* toolbarBtn_config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_config.png; sourceTree = "<group>"; };
+		5673E3351813F425000768F6 /* toolbarBtn_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_delete.png; sourceTree = "<group>"; };
+		5673E3361813F425000768F6 /* toolbarBtn_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_make.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +245,10 @@
 		566B13C2180E13DB00142316 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				566B13BE180D9A9C00142316 /* add.jpeg */,
-				566B13BF180D9A9C00142316 /* delete.jpeg */,
+				5673E3331813F424000768F6 /* toolbarBtn_add.png */,
+				5673E3341813F425000768F6 /* toolbarBtn_config.png */,
+				5673E3351813F425000768F6 /* toolbarBtn_delete.png */,
+				5673E3361813F425000768F6 /* toolbarBtn_make.png */,
 				5656164C18099FC900E97BD7 /* xcode-project.png */,
 			);
 			name = images;
@@ -333,15 +339,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				566B13C6180E175600142316 /* Makefile in Resources */,
-				566B13C0180D9A9C00142316 /* add.jpeg in Resources */,
 				565615D218082A8A00E97BD7 /* InfoPlist.strings in Resources */,
-				566B13C1180D9A9C00142316 /* delete.jpeg in Resources */,
+				5673E3371813F425000768F6 /* toolbarBtn_add.png in Resources */,
 				565615E018082A8A00E97BD7 /* Images.xcassets in Resources */,
 				5673E32B18126661000768F6 /* MakeSheet.xib in Resources */,
 				5644F75818103A3B0078C76C /* ConfigSheet.xib in Resources */,
+				5673E3381813F425000768F6 /* toolbarBtn_config.png in Resources */,
 				5656160018082AE200E97BD7 /* MainViewController.xib in Resources */,
 				565615D818082A8A00E97BD7 /* Credits.rtf in Resources */,
+				5673E3391813F425000768F6 /* toolbarBtn_delete.png in Resources */,
 				565615DE18082A8A00E97BD7 /* MainMenu.xib in Resources */,
+				5673E33A1813F425000768F6 /* toolbarBtn_make.png in Resources */,
 				5656164D18099FC900E97BD7 /* xcode-project.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

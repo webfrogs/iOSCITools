@@ -16,10 +16,16 @@
 
 + (void)addMakefileToDirectory:(NSString *)directoryPath{
     BOOL isDirectory = NO;
+    
+    NSString *makefilePath = [directoryPath stringByAppendingPathComponent:MakefileName];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath isDirectory:&isDirectory] && isDirectory) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:makefilePath]) {
+            [[NSFileManager defaultManager] removeItemAtPath:makefilePath error:nil];
+        }
+        
         NSError *error = nil;
-        [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:MakefileName]  toPath:[directoryPath stringByAppendingPathComponent:MakefileName] error:&error];
+        [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:MakefileName]  toPath:makefilePath error:&error];
         
 //        NSLog(@"%@",error);
 

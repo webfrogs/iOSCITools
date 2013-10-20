@@ -83,6 +83,15 @@
     [NSApp beginSheet:self.sheet modalForWindow:[[NSApp delegate] window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
+- (void)setEditModeByConfig:(MakefileConfig *)config{
+    if (config == nil) {
+        return;
+    }
+    
+    _isEdit = YES;
+    _config = config;
+}
+
 #pragma mark - NSTableView delegate and datasource
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return self.iMsgListArray.count;
@@ -204,8 +213,8 @@
         self.EmailDomainTextField.stringValue = _config.emailDomain;
     }
     
-    if (_config.emailReceiveList.length > 0) {
-        self.EmailReceiverTextField.stringValue = _config.emailReceiveList;
+    if (_config.mailReceiveList.length > 0) {
+        self.EmailReceiverTextField.stringValue = _config.mailReceiveList;
     }
     
     if (_config.mailGunApiKey.length > 0) {
@@ -233,7 +242,7 @@
     _config.appName = self.appNameTextField.stringValue;
     _config.baseURL = self.baseURLTextField.stringValue;
     _config.emailDomain = self.EmailDomainTextField.stringValue;
-    _config.emailReceiveList = self.EmailReceiverTextField.stringValue;
+    _config.mailReceiveList = self.EmailReceiverTextField.stringValue;
     _config.mailGunApiKey = self.MailGunAPITextField.stringValue;
     _config.scpHost = self.scpHostTextField.stringValue;
     _config.scpUser = self.scpUserTextFild.stringValue;

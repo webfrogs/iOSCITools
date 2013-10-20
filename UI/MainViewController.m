@@ -72,6 +72,11 @@
     }
     
     _configSheet = [[ConfigController alloc] init];
+    MakefileConfig *config = [MakefileManager getMakefileConfigFromDirectory:[projectFilePath stringByDeletingLastPathComponent]];
+    if (config != nil) {
+        [_configSheet setEditModeByConfig:config];
+    }
+    
     __weak MainViewController *wSelf = self;
     _configSheet.configSavedBlock = ^(MakefileConfig *config){
         [wSelf.dataArray addObject:projectFilePath];
@@ -122,31 +127,6 @@
         _makeSheet.projectDir = [projectPath stringByDeletingLastPathComponent];
         [_makeSheet showSheet];
         
-//        NSTask *task;
-//        task = [[NSTask alloc] init];
-//        [task setLaunchPath: @"/usr/bin/make"];
-//        
-//        NSArray *arguments;
-//        arguments = [NSArray arrayWithObjects: @"-C", [projectPath stringByDeletingLastPathComponent], nil];
-//        [task setArguments: arguments];
-//        
-//        NSPipe *pipe;
-//        pipe = [NSPipe pipe];
-//        [task setStandardOutput: pipe];
-//        
-//        NSFileHandle *file;
-//        file = [pipe fileHandleForReading];
-//        
-//        [task launch];
-//        
-//        NSData *data;
-//        data = [file readDataToEndOfFile];
-//        
-//        NSString *string;
-//        string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-//        NSLog (@"make returned:\n%@", string);
-//        
-        
     }
 }
 
@@ -180,23 +160,6 @@
     return [bundlePath stringByAppendingPathComponent:@"projectInfo.plist"];
 }
 
-NSString * runCommand(NSString* c) {
-    
-    NSString* outP;
-    FILE *read_fp;
-    char buffer[BUFSIZ + 1];
-    size_t chars_read;
-    memset(buffer, '\0', sizeof(buffer));
-    read_fp = popen(c.UTF8String, "r");
-    if (read_fp != NULL) {
-        chars_read = fread(buffer, sizeof(char), BUFSIZ, read_fp);
-        if (chars_read > 0)
-            outP = [NSString stringWithUTF8String:buffer];
-        NSLog(@"%@",outP);
-        pclose(read_fp);
-    }
-    return outP;
-}
 
 
 @end

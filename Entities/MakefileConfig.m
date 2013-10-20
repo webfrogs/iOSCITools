@@ -73,7 +73,7 @@
     BOOL result = YES;
     
     if (self.emailDomain.length == 0 ||
-        self.emailReceiveList.length == 0 ||
+        self.mailReceiveList.length == 0 ||
         self.mailGunApiKey.length == 0) {
         result = NO;
     }
@@ -119,7 +119,7 @@
     }
     
     if (self.emailDomain.length > 0 ||
-        self.emailReceiveList.length > 0 ||
+        self.mailReceiveList.length > 0 ||
         self.mailGunApiKey.length > 0) {
         [result appendString:@"#------E-mail setting------start\n"];
         
@@ -127,8 +127,8 @@
             [result appendString:[NSString stringWithFormat:@"EmailDomain = %@\n",self.emailDomain]];
         }
         
-        if (self.emailReceiveList.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"MailReceiveList = %@\n",self.emailReceiveList]];
+        if (self.mailReceiveList.length > 0) {
+            [result appendString:[NSString stringWithFormat:@"MailReceiveList = %@\n",self.mailReceiveList]];
         }
         
         if (self.mailGunApiKey.length > 0) {

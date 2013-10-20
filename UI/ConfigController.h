@@ -20,4 +20,6 @@
 
 - (void)showSheet;
 
+- (void)setEditModeByConfig:(MakefileConfig *)config;
+
 @end

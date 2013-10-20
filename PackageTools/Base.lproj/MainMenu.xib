@@ -662,22 +662,22 @@
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="yFw-DE-AFQ"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="bmK-1o-S3q"/>
-                    <toolbarItem implicitItemIdentifier="D4EC9AB8-F364-4D30-95D7-D1CEEE58C6E4" label="Add" paletteLabel="Add" tag="-1" image="add" id="qmY-rb-KyX">
+                    <toolbarItem implicitItemIdentifier="D4EC9AB8-F364-4D30-95D7-D1CEEE58C6E4" label="Add" paletteLabel="Add" tag="-1" image="toolbarBtn_add" id="qmY-rb-KyX">
                         <connections>
                             <action selector="addProject:" target="494" id="039-Wi-7KQ"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="F3F20811-73FB-481E-A65B-6D0E07E45F29" label="Delete" paletteLabel="Delete" tag="-1" image="delete" id="d87-Zb-utR">
+                    <toolbarItem implicitItemIdentifier="F3F20811-73FB-481E-A65B-6D0E07E45F29" label="Delete" paletteLabel="Delete" tag="-1" image="toolbarBtn_delete" id="d87-Zb-utR">
                         <connections>
                             <action selector="deleteProject:" target="494" id="BR5-rt-bGk"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="AD532E54-FD41-4930-B8E2-B1ADAEF9D268" label="Edit" paletteLabel="Edit" tag="-1" id="lz3-0w-olZ">
+                    <toolbarItem implicitItemIdentifier="AD532E54-FD41-4930-B8E2-B1ADAEF9D268" label="Config" paletteLabel="Config" tag="-1" image="toolbarBtn_config" id="lz3-0w-olZ">
                         <connections>
                             <action selector="editMakeConfig:" target="494" id="WeP-wd-Vxd"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="8383DA13-03A0-4640-BC27-8982CE97AFAE" label="make" paletteLabel="make" tag="-1" id="RzX-GK-DE1">
+                    <toolbarItem implicitItemIdentifier="8383DA13-03A0-4640-BC27-8982CE97AFAE" label="make" paletteLabel="make" tag="-1" image="toolbarBtn_make" id="RzX-GK-DE1">
                         <connections>
                             <action selector="runMake:" target="494" id="omR-0d-OKP"/>
                         </connections>
@@ -702,7 +702,9 @@
         <userDefaultsController representsSharedInstance="YES" id="fUV-Mi-2aj"/>
     </objects>
     <resources>
-        <image name="add" width="204" height="204"/>
-        <image name="delete" width="251" height="201"/>
+        <image name="toolbarBtn_add" width="256" height="256"/>
+        <image name="toolbarBtn_config" width="512" height="512"/>
+        <image name="toolbarBtn_delete" width="512" height="411"/>
+        <image name="toolbarBtn_make" width="98.621131896972656" height="94.347549438476562"/>
     </resources>
 </document>
