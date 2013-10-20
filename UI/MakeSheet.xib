@@ -12,6 +12,7 @@
                 <outlet property="iMsgCheckBox" destination="2iW-vJ-RKt" id="AuS-6Q-f6b"/>
                 <outlet property="outputTextView" destination="T5i-gR-hQ2" id="cBR-8E-1DK"/>
                 <outlet property="spinner" destination="WtV-42-1FA" id="ikI-U6-xTR"/>
+                <outlet property="startBtn" destination="TBL-GM-rDc" id="W7O-Xe-J6M"/>
                 <outlet property="uploadCheckBox" destination="cbM-5K-oOS" id="8k1-Eq-VjF"/>
                 <outlet property="window" destination="1" id="705-wM-ugt"/>
             </connections>

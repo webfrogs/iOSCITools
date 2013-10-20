@@ -112,7 +112,13 @@ static CommandManager *instance;
     
 }
 
-#pragma mark -
+- (void)stopCommand{
+    if ([_makeTask isRunning]) {
+        [_makeTask terminate];
+    }
+}
+
+#pragma mark - Notification
 - (void)outputNotification:(NSNotification *)note{
     NSData *output = [_outputPipe fileHandleForReading].availableData;
     NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];

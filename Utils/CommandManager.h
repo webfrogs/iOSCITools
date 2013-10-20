@@ -17,4 +17,6 @@
 
 - (void)runMakeAtDirectory:(NSString *)directory withOption:(unsigned int)option;
 
+- (void)stopCommand;
+
 @end

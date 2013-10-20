@@ -24,6 +24,7 @@
 @property(assign)IBOutlet NSButton *uploadCheckBox;
 @property(assign)IBOutlet NSButton *emailCheckBox;
 @property(assign)IBOutlet NSButton *iMsgCheckBox;
+@property(assign)IBOutlet NSButton *startBtn;
 
 @end
 
@@ -71,6 +72,7 @@
             NSNumber *running = change[NSKeyValueChangeNewKey];
             BOOL isRunning = running.boolValue;
             [self.spinner setHidden:!isRunning];
+            [self.startBtn setEnabled:!isRunning];
             if (isRunning) {
                 [self.spinner startAnimation:nil];
             }else{
@@ -86,6 +88,8 @@
 - (IBAction)closeBtnClicked:(id)sender{
     [_commandManager removeObserver:self forKeyPath:CommandOutputKVOPath];
     [_commandManager removeObserver:self forKeyPath:CommandRunningKVOPath];
+    [_commandManager stopCommand];
+    
     [NSApp endSheet:self.window];
     [self.window close];
     self.window = nil;
