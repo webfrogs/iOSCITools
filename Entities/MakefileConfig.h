@@ -17,9 +17,9 @@
 // http setting
 @property(nonatomic, strong)NSString *baseURL;
 
-// email setting
-@property(nonatomic, strong)NSString *emailDomain;
-@property(nonatomic, strong)NSString *mailReceiveList;
+// MailGun setting
+@property(nonatomic, strong)NSString *mailGunDomain;
+@property(nonatomic, strong)NSString *mailGunReceiveList;
 @property(nonatomic, strong)NSString *mailGunApiKey;
 
 // iMessage setting
@@ -29,6 +29,12 @@
 @property(nonatomic, strong)NSString *scpHost;
 @property(nonatomic, strong)NSString *scpUser;
 @property(nonatomic, strong)NSString *scpFilePath;
+
+// ftp setting
+@property(nonatomic, strong)NSString *ftpHost;
+@property(nonatomic, strong)NSString *ftpUser;
+@property(nonatomic, strong)NSString *ftpPassword;
+
 
 
 - (id)initWithFilePath:(NSString *)filePath;

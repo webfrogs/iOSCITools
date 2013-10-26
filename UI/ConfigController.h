@@ -16,8 +16,6 @@
 
 @property(copy)void (^configSavedBlock)(MakefileConfig *config);
 
-- (id)initWithConfig:(MakefileConfig *)config;
-
 - (void)showSheet;
 
 - (void)setEditModeByConfig:(MakefileConfig *)config;

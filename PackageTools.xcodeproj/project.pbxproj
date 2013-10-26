@@ -14,7 +14,6 @@
 		565615D418082A8A00E97BD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615D318082A8A00E97BD7 /* main.m */; };
 		565615D818082A8A00E97BD7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 565615D618082A8A00E97BD7 /* Credits.rtf */; };
 		565615DB18082A8A00E97BD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615DA18082A8A00E97BD7 /* AppDelegate.m */; };
-		565615DE18082A8A00E97BD7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565615DC18082A8A00E97BD7 /* MainMenu.xib */; };
 		565615E018082A8A00E97BD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565615DF18082A8A00E97BD7 /* Images.xcassets */; };
 		565615E718082A8A00E97BD7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565615E618082A8A00E97BD7 /* XCTest.framework */; };
 		565615E818082A8A00E97BD7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565615C718082A8A00E97BD7 /* Cocoa.framework */; };
@@ -23,8 +22,6 @@
 		565615FF18082AE200E97BD7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565615FD18082AE200E97BD7 /* MainViewController.m */; };
 		5656160018082AE200E97BD7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565615FE18082AE200E97BD7 /* MainViewController.xib */; };
 		5656164D18099FC900E97BD7 /* xcode-project.png in Resources */ = {isa = PBXBuildFile; fileRef = 5656164C18099FC900E97BD7 /* xcode-project.png */; };
-		566B13C5180E148700142316 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
-		566B13C6180E175600142316 /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 566B13C4180E148700142316 /* Makefile */; };
 		566B13C9180E238400142316 /* MakefileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13C8180E238400142316 /* MakefileManager.m */; };
 		566B13CC180E271E00142316 /* MakefileConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B13CB180E271E00142316 /* MakefileConfig.m */; };
 		5673E32B18126661000768F6 /* MakeSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5673E32A18126661000768F6 /* MakeSheet.xib */; };
@@ -34,6 +31,8 @@
 		5673E3381813F425000768F6 /* toolbarBtn_config.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3341813F425000768F6 /* toolbarBtn_config.png */; };
 		5673E3391813F425000768F6 /* toolbarBtn_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3351813F425000768F6 /* toolbarBtn_delete.png */; };
 		5673E33A1813F425000768F6 /* toolbarBtn_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 5673E3361813F425000768F6 /* toolbarBtn_make.png */; };
+		56D3C31D181B786E0027BA97 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 56D3C31C181B786E0027BA97 /* Makefile */; };
+		56D3C31E181B78AC0027BA97 /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 56D3C31C181B786E0027BA97 /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		565615FD18082AE200E97BD7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		565615FE18082AE200E97BD7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		5656164C18099FC900E97BD7 /* xcode-project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xcode-project.png"; sourceTree = "<group>"; };
-		566B13C4180E148700142316 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		566B13C7180E238400142316 /* MakefileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakefileManager.h; sourceTree = "<group>"; };
 		566B13C8180E238400142316 /* MakefileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakefileManager.m; sourceTree = "<group>"; };
 		566B13CA180E271E00142316 /* MakefileConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakefileConfig.h; sourceTree = "<group>"; };
@@ -88,6 +86,7 @@
 		5673E3341813F425000768F6 /* toolbarBtn_config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_config.png; sourceTree = "<group>"; };
 		5673E3351813F425000768F6 /* toolbarBtn_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_delete.png; sourceTree = "<group>"; };
 		5673E3361813F425000768F6 /* toolbarBtn_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarBtn_make.png; sourceTree = "<group>"; };
+		56D3C31C181B786E0027BA97 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = CCMakefile4iOS/Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +214,7 @@
 		5656164B18099FAD00E97BD7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				566B13C3180E13FA00142316 /* makefile */,
+				56D3C31B181B785A0027BA97 /* CCMakefile4iOS */,
 				566B13C2180E13DB00142316 /* images */,
 			);
 			path = Resource;
@@ -254,12 +253,12 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		566B13C3180E13FA00142316 /* makefile */ = {
+		56D3C31B181B785A0027BA97 /* CCMakefile4iOS */ = {
 			isa = PBXGroup;
 			children = (
-				566B13C4180E148700142316 /* Makefile */,
+				56D3C31C181B786E0027BA97 /* Makefile */,
 			);
-			name = makefile;
+			name = CCMakefile4iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566B13C6180E175600142316 /* Makefile in Resources */,
+				56D3C31E181B78AC0027BA97 /* Makefile in Resources */,
 				565615D218082A8A00E97BD7 /* InfoPlist.strings in Resources */,
 				5673E3371813F425000768F6 /* toolbarBtn_add.png in Resources */,
 				565615E018082A8A00E97BD7 /* Images.xcassets in Resources */,
@@ -348,7 +347,6 @@
 				5656160018082AE200E97BD7 /* MainViewController.xib in Resources */,
 				565615D818082A8A00E97BD7 /* Credits.rtf in Resources */,
 				5673E3391813F425000768F6 /* toolbarBtn_delete.png in Resources */,
-				565615DE18082A8A00E97BD7 /* MainMenu.xib in Resources */,
 				5673E33A1813F425000768F6 /* toolbarBtn_make.png in Resources */,
 				5656164D18099FC900E97BD7 /* xcode-project.png in Resources */,
 			);
@@ -369,7 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566B13C5180E148700142316 /* Makefile in Sources */,
+				56D3C31D181B786E0027BA97 /* Makefile in Sources */,
 				565615DB18082A8A00E97BD7 /* AppDelegate.m in Sources */,
 				5673E331181358CD000768F6 /* CommandManager.m in Sources */,
 				565615FF18082AE200E97BD7 /* MainViewController.m in Sources */,

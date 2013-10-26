@@ -1,0 +1,3 @@
+[submodule "Resource/CCMakefile4iOS"]
+	path = Resource/CCMakefile4iOS
+	url = https://github.com/webfrogs/CCMakefile4iOS.git

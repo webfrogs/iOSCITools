@@ -58,12 +58,18 @@
 }
 
 - (BOOL)canDoUpload{
-    BOOL result = YES;
+    BOOL result = NO;
     
-    if (self.scpHost.length == 0 ||
-        self.scpUser.length == 0 ||
-        self.scpFilePath.length == 0) {
-        result = NO;
+    if (self.scpHost.length > 0 ||
+        self.scpUser.length > 0 ||
+        self.scpFilePath.length > 0) {
+        result = YES;
+    }
+    
+    if (self.ftpHost.length > 0 &&
+        self.ftpUser.length > 0 &&
+        self.ftpPassword.length > 0) {
+        result = YES;
     }
     
     return result;
@@ -72,8 +78,8 @@
 - (BOOL)canSendEmail{
     BOOL result = YES;
     
-    if (self.emailDomain.length == 0 ||
-        self.mailReceiveList.length == 0 ||
+    if (self.mailGunDomain.length == 0 ||
+        self.mailGunReceiveList.length == 0 ||
         self.mailGunApiKey.length == 0) {
         result = NO;
     }
@@ -95,83 +101,74 @@
 - (NSString *)description{
     NSMutableString *result = [NSMutableString stringWithString:@""];
     
-    if (self.configuration.length > 0 || self.appName.length > 0) {
-        [result appendString:@"#------Compile setting-------start\n"];
-        if (self.configuration.length > 0) {
-            [result appendString:@"#The configuration of project.(default is Release)\n"];
-            [result appendString:[NSString stringWithFormat:@"Configuration = %@\n\n",self.configuration]];
-        }
-        
-        if (self.appName.length > 0) {
-            [result appendString:@"#Name of app.(default value is CFBundleDisplayName of Info.plist)\n"];
-            [result appendString:[NSString stringWithFormat:@"AppName = %@\n\n",self.appName]];
-        }
-        
-        [result appendString:@"#------Compile setting-------end\n"];
-        [result appendString:@"\n\n\n"];
-    }
+    [result appendString:@"#------Compile setting-------start\n"];
+    [result appendString:@"#The configuration of project.(default is Release)\n"];
+    [result appendString:[self combineConfigItemToString:@"Configuration"]];
+    [result appendString:@"\n"];
+    [result appendString:@"#Name of app.(default value is CFBundleDisplayName of Info.plist)\n"];
+    [result appendString:[self combineConfigItemToString:@"AppName"]];
+    [result appendString:@"#------Compile setting-------end\n"];
+    [result appendString:@"\n\n\n"];
     
-    if (self.baseURL.length > 0) {
-        [result appendString:@"#------Http setting------start\n"];
-        [result appendString:[NSString stringWithFormat:@"BaseURL = %@\n",self.baseURL]];
-        [result appendString:@"#------Http setting------end\n"];
-        [result appendString:@"\n\n\n"];
-    }
     
-    if (self.emailDomain.length > 0 ||
-        self.mailReceiveList.length > 0 ||
-        self.mailGunApiKey.length > 0) {
-        [result appendString:@"#------E-mail setting------start\n"];
-        
-        if (self.emailDomain.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"EmailDomain = %@\n",self.emailDomain]];
-        }
-        
-        if (self.mailReceiveList.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"MailReceiveList = %@\n",self.mailReceiveList]];
-        }
-        
-        if (self.mailGunApiKey.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"MailGunApiKey = %@\n",self.mailGunApiKey]];
-        }
-        
-        [result appendString:@"#------E-mail setting------end\n"];
-        [result appendString:@"\n\n\n"];
-    }
+    [result appendString:@"#------Http setting------start\n"];
+    [result appendString:[self combineConfigItemToString:@"BaseURL"]];
+    [result appendString:@"#------Http setting------end\n"];
+    [result appendString:@"\n\n\n"];
     
-    if (self.iMsgList.length > 0) {
-        [result appendString:@"#------iMessage setting------start\n"];
-        [result appendString:@"#Receiver address list(seperated with white space)\n"];
-        
-        [result appendString:[NSString stringWithFormat:@"IMsgList = %@\n",self.iMsgList]];
-        
-        [result appendString:@"#------iMessage setting------end\n"];
-        [result appendString:@"\n\n\n"];
-    }
     
-    if (self.scpHost.length > 0 ||
-        self.scpUser.length > 0 ||
-        self.scpFilePath.length > 0) {
-        [result appendString:@"#------scp setting------start\n"];
-        
-        if (self.scpHost.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"ScpHost = %@\n",self.scpHost]];
-        }
-        
-        if (self.scpUser.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"ScpUser = %@\n",self.scpUser]];
-        }
-        
-        if (self.scpFilePath.length > 0) {
-            [result appendString:[NSString stringWithFormat:@"ScpFilePath = %@\n",self.scpFilePath]];
-        }
-        
-        [result appendString:@"#------scp setting------end\n"];
-        [result appendString:@"\n\n\n"];
-
-    }
+    [result appendString:@"#------MailGun setting------start\n"];
+    [result appendString:@"#use MailGun to send emails. (http://www.mailgun.com/)\n"];
+    [result appendString:[self combineConfigItemToString:@"MailGunDomain"]];
+    [result appendString:[self combineConfigItemToString:@"MailGunReceiveList"]];
+    [result appendString:[self combineConfigItemToString:@"MailGunApiKey"]];
+    [result appendString:@"#------MailGun setting------end\n"];
+    [result appendString:@"\n\n\n"];
+    
+    
+    [result appendString:@"#------iMessage setting------start\n"];
+    [result appendString:@"#Receiver address list(seperated with white space)\n"];
+    [result appendString:[self combineConfigItemToString:@"IMsgList"]];
+    [result appendString:@"#------iMessage setting------end\n"];
+    [result appendString:@"\n\n\n"];
+    
+    
+    [result appendString:@"#------scp setting------start\n"];
+    [result appendString:[self combineConfigItemToString:@"ScpHost"]];
+    [result appendString:[self combineConfigItemToString:@"ScpUser"]];
+    [result appendString:[self combineConfigItemToString:@"ScpFilePath"]];
+    [result appendString:@"#------scp setting------end\n"];
+    [result appendString:@"\n\n\n"];
+    
+    
+    [result appendString:@"#------ftp setting------start\n"];
+    [result appendString:[self combineConfigItemToString:@"FtpHost"]];
+    [result appendString:[self combineConfigItemToString:@"FtpUser"]];
+    [result appendString:[self combineConfigItemToString:@"FtpPassword"]];
+    [result appendString:@"#------ftp setting------end\n"];
+    
     
     return result;
+}
+
+#pragma mark - Inner methods
+- (NSString *)combineConfigItemToString:(NSString *)configItem{
+    NSString *selectorName = [NSString stringWithFormat:@"%@%@",[[configItem substringToIndex:1] lowercaseString],[configItem substringFromIndex:1]];
+    SEL selector = NSSelectorFromString(selectorName);
+    NSString *itemValue = nil;
+    if ([self respondsToSelector:selector]) {
+        itemValue = objc_msgSend(self, selector);
+    }
+    
+    NSString *resultStr = @"";
+    if (itemValue.length > 0) {
+        resultStr = [NSString stringWithFormat:@"%@ = %@\n",configItem,itemValue];
+    }else{
+        resultStr = [NSString stringWithFormat:@"#%@ = \n",configItem];
+    }
+    
+    
+    return resultStr;
 }
 
 @end

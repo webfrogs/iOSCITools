@@ -10,7 +10,7 @@
 
 #define KVOPath                 @"iMsgListArray"
 
-@interface ConfigController ()<NSTableViewDelegate,NSTableViewDataSource>{
+@interface ConfigController ()<NSTableViewDelegate,NSTableViewDataSource,NSTabViewDelegate>{
     MakefileConfig *_config;
     BOOL _isEdit;
 }
@@ -25,7 +25,11 @@
 @property(assign)IBOutlet NSTextField *scpHostTextField;
 @property(assign)IBOutlet NSTextField *scpUserTextFild;
 @property(assign)IBOutlet NSTextField *scpFilePathTextField;
+@property(assign)IBOutlet NSTextField *ftpHostTextField;
+@property(assign)IBOutlet NSTextField *ftpUserTextFild;
+@property(assign)IBOutlet NSTextField *ftpPasswordTextField;
 @property(assign)IBOutlet NSTableView *iMsgListTableView;
+@property(assign)IBOutlet NSTabView *uploadTabView;
 @property(assign)IBOutlet NSButton *iMsgDeleteBtn;
 
 @property(strong)NSArray *iMsgListArray;
@@ -48,19 +52,6 @@
     return self;
 }
 
-- (id)initWithConfig:(MakefileConfig *)config{
-    if (config == nil) {
-        return [self init];
-    }
-    
-    if (self = [self init]) {
-        
-        _config = config;
-        _isEdit = YES;
-    }
-    
-    return self;
-}
 
 - (void)dealloc{
     [self removeObserver:self forKeyPath:KVOPath];
@@ -81,6 +72,7 @@
     [self handleConfigToUI];
     
     [NSApp beginSheet:self.sheet modalForWindow:[[NSApp delegate] window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+    
 }
 
 - (void)setEditModeByConfig:(MakefileConfig *)config{
@@ -109,6 +101,12 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     [self.iMsgDeleteBtn setEnabled:YES];
+}
+
+#pragma mark - NSTabViewDelegate
+- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem{
+    NSInteger index = [tabView.tabViewItems indexOfObject:tabViewItem];
+    NSLog(@"%ld",(long)index);
 }
 
 #pragma mark - KVO
@@ -197,6 +195,15 @@
     [self.iMsgDeleteBtn setEnabled:NO];
     [self convertIMsgListFromObject];
     
+    if (_isEdit &&
+        (_config.ftpHost.length > 0 ||
+         _config.ftpUser.length > 0 ||
+         _config.ftpPassword.length > 0)) {
+        [self.uploadTabView selectTabViewItemAtIndex:0];
+    }else{
+        [self.uploadTabView selectTabViewItemAtIndex:1];
+    }
+    
     if (_config.configuration.length > 0) {
         self.configComboBox.stringValue = _config.configuration;
     }
@@ -209,12 +216,12 @@
         self.baseURLTextField.stringValue = _config.baseURL;
     }
     
-    if (_config.emailDomain.length > 0) {
-        self.EmailDomainTextField.stringValue = _config.emailDomain;
+    if (_config.mailGunDomain.length > 0) {
+        self.EmailDomainTextField.stringValue = _config.mailGunDomain;
     }
     
-    if (_config.mailReceiveList.length > 0) {
-        self.EmailReceiverTextField.stringValue = _config.mailReceiveList;
+    if (_config.mailGunReceiveList.length > 0) {
+        self.EmailReceiverTextField.stringValue = _config.mailGunReceiveList;
     }
     
     if (_config.mailGunApiKey.length > 0) {
@@ -233,6 +240,18 @@
         self.scpFilePathTextField.stringValue = _config.scpFilePath;
     }
     
+    if (_config.ftpHost.length > 0) {
+        self.ftpHostTextField.stringValue = _config.ftpHost;
+    }
+    
+    if (_config.ftpUser.length > 0) {
+        self.ftpUserTextFild.stringValue = _config.ftpUser;
+    }
+    
+    if (_config.ftpPassword.length > 0) {
+        self.ftpPasswordTextField.stringValue = _config.ftpPassword;
+    }
+    
 }
 
 - (void)handleConfigFromUI{
@@ -241,13 +260,15 @@
     _config.configuration = self.configComboBox.stringValue;
     _config.appName = self.appNameTextField.stringValue;
     _config.baseURL = self.baseURLTextField.stringValue;
-    _config.emailDomain = self.EmailDomainTextField.stringValue;
-    _config.mailReceiveList = self.EmailReceiverTextField.stringValue;
+    _config.mailGunDomain = self.EmailDomainTextField.stringValue;
+    _config.mailGunReceiveList = self.EmailReceiverTextField.stringValue;
     _config.mailGunApiKey = self.MailGunAPITextField.stringValue;
     _config.scpHost = self.scpHostTextField.stringValue;
     _config.scpUser = self.scpUserTextFild.stringValue;
     _config.scpFilePath = self.scpFilePathTextField.stringValue;
-    
+    _config.ftpHost = self.ftpHostTextField.stringValue;
+    _config.ftpUser = self.ftpUserTextFild.stringValue;
+    _config.ftpPassword = self.ftpPasswordTextField.stringValue;
 }
 
 @end

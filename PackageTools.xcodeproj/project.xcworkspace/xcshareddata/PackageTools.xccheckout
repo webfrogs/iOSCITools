@@ -12,6 +12,8 @@
 	<dict>
 		<key>08EADCCA-AD14-45BD-B9E6-1FBE269B9E66</key>
 		<string>ssh://vps.webfrogs.me/PackageTool.git</string>
+		<key>855896C9-0533-4F2A-899C-77A3903DDEF1</key>
+		<string>https://github.com/webfrogs/CCMakefile4iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PackageTools.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>08EADCCA-AD14-45BD-B9E6-1FBE269B9E66</key>
 		<string>../..</string>
+		<key>855896C9-0533-4F2A-899C-77A3903DDEF1</key>
+		<string>../../Resource/CCMakefile4iOS</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://vps.webfrogs.me/PackageTool.git</string>
@@ -28,6 +32,14 @@
 	<string>08EADCCA-AD14-45BD-B9E6-1FBE269B9E66</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>855896C9-0533-4F2A-899C-77A3903DDEF1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CCMakefile4iOS</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

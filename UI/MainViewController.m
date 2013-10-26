@@ -109,7 +109,8 @@
         NSString *projectPath = self.dataArray[selectedRow];
         NSString *projectDirectory = [projectPath stringByDeletingLastPathComponent];
         MakefileConfig *config = [MakefileManager getMakefileConfigFromDirectory:projectDirectory];
-        _configSheet = [[ConfigController alloc] initWithConfig:config];
+        _configSheet = [[ConfigController alloc] init];
+        [_configSheet setEditModeByConfig:config];
         _configSheet.configSavedBlock = ^(MakefileConfig *config){
             [MakefileManager writeConfigToDirectory:config directory:projectDirectory];
         };
